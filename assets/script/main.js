@@ -107,6 +107,7 @@ signUpform.addEventListener("submit", (evt) => {
 
 // Signing in User 
 signInform.addEventListener("submit", (evt) => {
+    evt.preventDefault();
     let userSignInName = document.getElementById("sign-in-name").value;
     let userSignInEmail = document.getElementById("sign-in-email").value;
     let userSignInPassword = document.getElementById("sign-in-password").value;
@@ -135,22 +136,20 @@ signInform.addEventListener("submit", (evt) => {
             console.log(errorCode);
         });
 
-    evt.preventDefault();
 })
 
 // Sign Out 
 
-const signOutBtn = document.getElementById("sign-out-btn").addEventListener("click", () => {
+document.getElementById("sign-out-btn").addEventListener("click", () => {
     if (auth) {
         signOut(auth).then(() => {
             preLoadTextState.innerText = `Signed Out Successfully`;
             preLoader.style.display = "flex"
             setTimeout(() => {
-                preLoader.style.display = "none";
-                setTimeout(() => {
-                    location.reload
-                }, 1000)
-            }, 3000);
+                preLoader.style.display = "none"
+                location.reload();
+            },2000);
+
         }).catch((error) => {
             const errorCode = error.code;
             errorHandler(errorCode);
