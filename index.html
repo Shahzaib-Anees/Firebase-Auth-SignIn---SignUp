@@ -20,7 +20,7 @@
         </span>
         <div class="text">
             <p id="text-state">
-               Signed In Successfully
+                Signed In Successfully
             </p>
             <p id="text-default">Redirecting!</p>
         </div>
@@ -30,6 +30,10 @@
         <div class="content-container" id="sign-in-cont">
             <form id="sign-in-form" class="form">
                 <h1>Sign In</h1>
+                <label for="fulltName">
+                    <p>Name</p>
+                    <input type="text" name="fulltName" id="sign-in-name" placeholder="Enter your full name here">
+                </label>
                 <label for="email">
                     <p>Email</p>
                     <input type="email" name="email" id="sign-in-email" placeholder="Enter your email here">
@@ -82,6 +86,38 @@
                         <span id="path-sign-in">Sign In</span>
                     </p>
                 </div>
+            </div>
+        </div>
+        <div id="error-unveiler">
+            <span id="icn">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </span>
+            <p id="error-text">Invalid Email or Password</p>
+            <button id="reloader">Retry</button>
+        </div>
+    </article>
+
+    <article id="user-details-cont">
+        <div class="header">
+            <div class="bg-text">
+                User Credentials
+            </div>
+            <div class="image">
+                <img src="./assets/Images/user-icn-lgo.png" alt="image">
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="content">
+                <div>Name :
+                    <span id="user-name">Mohammad Shahzaib</span>
+                </div>
+                <div>Email :
+                    <span id="user-email">mohammad.shahzaib@gmail.com</span>
+                </div>
+                <div>Password :
+                    <span id="user-password">1234566</span>
+                </div>
+                <button id="sign-out-btn">Sign Out</button>
             </div>
         </div>
     </article>
